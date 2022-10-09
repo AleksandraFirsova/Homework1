@@ -6,12 +6,12 @@ public class Task1 {
         double total = 0;
         double finishTotal = 2_459_000;
         double percent = 0.01;
+        int monthNum = 1;
 
         while (total < finishTotal) {
-            for (int i = 1; i <= 12; i++) {
-                total = (total + sumMonth) * (1 + percent);
-                System.out.println("Месяц " + i + " , сумма накоплений равна " + total + " рублей");
-            }
+            total = (total + sumMonth) * (1 + percent);
+            System.out.println("Месяц " + monthNum + " , сумма накоплений равна " + total + " рублей");
+            monthNum++;
         }
     }
 }
