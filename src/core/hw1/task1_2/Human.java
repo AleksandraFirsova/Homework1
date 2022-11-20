@@ -8,12 +8,27 @@ public class Human {
     private String jobTitle;
 
     public Human(int dateBirth, String name, String city, String jobTitle) {
-        this.dateBirth = dateBirth;
-        this.name = name;
-        this.city = city;
-        this.jobTitle = jobTitle;
+        if (dateBirth < 0) {
+            this.dateBirth = 0;
+        } else {
+            this.dateBirth = dateBirth;
+        }
+        if (name == null) {
+            this.name = "Информация не указана";
+        } else {
+            this.name = name;
+        }
+        if (city == null) {
+            this.city = "Информация не указана";
+        } else {
+            this.city = city;
+        }
+        if (jobTitle == null) {
+            this.jobTitle = "Информация не указана";
+        } else {
+            this.jobTitle = jobTitle;
+        }
     }
-
     public int getDateBirth() {
         return dateBirth;
     }
