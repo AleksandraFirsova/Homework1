@@ -12,4 +12,9 @@ public class Utils {
     public static float validateFloatNum(float value, float defaultValue) {
         return value <= 0 ? defaultValue : value;
     }
+
+    public static double validateDoubleNum(double value, double defaultValue) {
+        return value <= 0 ? defaultValue : value;
+    }
+
 }

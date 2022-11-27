@@ -23,23 +23,13 @@ public class Bouquet {
     }
 
     public static String getNameFlowersInBouquet(Flower[] bouquet) {
-        String flowers = bouquet[0].getName();
+        StringBuilder flowers = new StringBuilder(bouquet[0].getName());
         for (int i = 0; i < bouquet.length; i++) {
             if (bouquet[i].getName() != null) {
-                flowers = flowers + ", " + bouquet[i].getName();
+                flowers.append(", ").append(bouquet[i].getName());
             }
         }
-        return flowers;
-    }
-
-    public static String getSimilarTypeOfFlowersInBouquet(Flower[] bouquet) {
-        String flowers = bouquet[0].getName();
-        for (int i = 0; i < bouquet.length; i++) {
-            if (bouquet[i].getName() != null) {
-                flowers = flowers + ", " + bouquet[i].getName();
-            }
-        }
-        return flowers;
+        return flowers.toString();
     }
 
     public static void getInfoBouquet(Flower[] bouquet) {

@@ -49,6 +49,6 @@ public class Human {
     }
 
     public void getGreetingMessage(String name, String city, int dateBirth, String jobTitle) {
-        System.out.println("Привет! Меня зовут " + name + ". Я из города " + city + ". Я родился в " + dateBirth + " году. Я работаю на должности " + jobTitle + " Будем знакомы!");
+        System.out.println("Привет! Меня зовут " + name + ". Я из города " + city + ". Я родился в " + dateBirth + " году. Я работаю на должности " + jobTitle + ". Будем знакомы!");
     }
 }
