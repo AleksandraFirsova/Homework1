@@ -16,7 +16,7 @@ public class Bouquet {
         float cost = 0;
         for (int i = 0; i < bouquet.length; i++) {
             if (bouquet[i] != null) {
-                cost = cost + bouquet[i].getCost();
+                cost = cost + (bouquet[i].getCost()*10)/100;
             }
         }
         return cost;
@@ -33,6 +33,9 @@ public class Bouquet {
     }
 
     public static void getInfoBouquet(Flower[] bouquet) {
+        for (Flower flower : bouquet) {
+            System.out.println(flower);
+        }
         System.out.println("Букет, в котором есть " + getNameFlowersInBouquet(bouquet) + " будет стоить " + getCostBouquet(bouquet) + " рублей и простоит " + getMinLifeSpanBouquet(bouquet) + " суток.");
     }
 }
