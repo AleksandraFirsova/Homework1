@@ -26,22 +26,22 @@ public class Predator extends Mammal {
 
     @Override
     public void eat() {
-
+        System.out.println("ест");
     }
 
     @Override
     public void sleep() {
-
+        System.out.println("спит");
     }
 
     @Override
     public void move() {
-
+        System.out.println("бегает");
     }
 
     @Override
     public void walk() {
-
+        System.out.println("гуляет");
     }
 
     @Override

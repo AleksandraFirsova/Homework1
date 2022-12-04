@@ -52,7 +52,6 @@ public class Flightless extends Bird {
         Flightless that = (Flightless) o;
         return Objects.equals(typeMove, that.typeMove);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), typeMove);
