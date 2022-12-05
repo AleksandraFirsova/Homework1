@@ -64,8 +64,8 @@ public class Herbivore extends Mammal {
                 "имя - " + super.getName() +
                 ", возраст - " + super.getAge() +
                 ", класс - " + Herbivore.this.getClass().getSimpleName() +
-                ", среда обитания - " + livingEnvironment +
-                ", скорость передвижения - " + movementSpeed +
+                ", среда обитания - " + super.getLivingEnvironment() +
+                ", скорость передвижения - " + super.getMovementSpeed() +
                 ", тип пищи - " + food;
     }
 }

@@ -60,7 +60,7 @@ public class Flying extends Bird {
                 "имя - " + super.getName() +
                 ", возраст - " + super.getAge() +
                 ", класс - " + Flying.this.getClass().getSimpleName() +
-                ", среда обитания - " + livingEnvironment +
+                ", среда обитания - " + getLivingEnvironment() +
                 ", тип передвижения - " + typeMove;
     }
 }

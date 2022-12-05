@@ -6,8 +6,8 @@ import java.util.Objects;
 
 public abstract class Mammal extends Animal {
 
-    String livingEnvironment;
-    double movementSpeed;
+    private String livingEnvironment;
+    private double movementSpeed;
 
     public Mammal(String name, int age, String livingEnvironment, double movementSpeed) {
         super(name, age);

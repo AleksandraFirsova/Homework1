@@ -3,6 +3,7 @@ package core.hw3.task1_2;
 import core.hw3.Utils;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Car extends Transport {
@@ -157,5 +158,18 @@ public class Car extends Transport {
         } else {
             return "Данный вид топлива не доступен";
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return seatsNumber == car.seatsNumber && Float.compare(car.volume, volume) == 0 && Objects.equals(transmission, car.transmission) && Objects.equals(registrationNumber, car.registrationNumber) && Objects.equals(isSummerRubberType, car.isSummerRubberType) && Objects.equals(key, car.key) && Objects.equals(insurance, car.insurance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(seatsNumber, volume, transmission, registrationNumber, isSummerRubberType, key, insurance);
     }
 }

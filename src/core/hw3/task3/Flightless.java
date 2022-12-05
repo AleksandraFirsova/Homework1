@@ -63,7 +63,7 @@ public class Flightless extends Bird {
                 "имя - " + super.getName() +
                 ", возраст - " + super.getAge() +
                 ", класс - " + Flightless.this.getClass().getSimpleName() +
-                ", среда обитания - " + livingEnvironment +
+                ", среда обитания - " + super.getLivingEnvironment() +
                 ", тип передвижения - " + typeMove;
     }
 }

@@ -64,8 +64,8 @@ public class Predator extends Mammal {
                 "имя - " + super.getName() +
                 ", возраст - " + super.getAge() +
                 ", класс - " + Predator.this.getClass().getSimpleName() +
-                ", среда обитания - " + livingEnvironment +
-                ", скорость передвижения - " + movementSpeed +
+                ", среда обитания - " + super.getLivingEnvironment() +
+                ", скорость передвижения - " + super.getMovementSpeed() +
                 ", тип пищи - " + food;
     }
 }

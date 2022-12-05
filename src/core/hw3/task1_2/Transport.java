@@ -2,6 +2,8 @@ package core.hw3.task1_2;
 
 import core.hw3.Utils;
 
+import java.util.Objects;
+
 public abstract class Transport {
     private String brand;
     private String model;
@@ -65,5 +67,18 @@ public abstract class Transport {
         } else {
             System.out.println(Utils.validateDoubleNum(this.fuelPercentage,0) + "%");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return year == transport.year && maxSpeed == transport.maxSpeed && Double.compare(transport.fuelPercentage, fuelPercentage) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model) && Objects.equals(country, transport.country) && Objects.equals(color, transport.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, year, country, color, maxSpeed, fuelPercentage);
     }
 }

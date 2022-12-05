@@ -2,6 +2,8 @@ package core.hw3.task1_2;
 
 import core.hw3.Utils;
 
+import java.util.Objects;
+
 public class Train extends Transport {
 
     private double cost;
@@ -82,5 +84,18 @@ public class Train extends Transport {
         } else {
             return "Данный вид топлива не доступен";
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Train train = (Train) o;
+        return Double.compare(train.cost, cost) == 0 && time == train.time && amount == train.amount && Objects.equals(name, train.name) && Objects.equals(endingStation, train.endingStation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cost, time, name, endingStation, amount);
     }
 }

@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public abstract class Bird extends Animal {
 
-    String livingEnvironment;
+    private String livingEnvironment;
 
     public Bird(String name, int age, String livingEnvironment) {
         super(name, age);
