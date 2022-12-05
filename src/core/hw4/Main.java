@@ -18,11 +18,7 @@ public class Main {
         Truck thirdTruck = new Truck("Mercedes", "Benz", 60);
         Truck fourthTruck = new Truck("Volkswagen", "AG", 70);
 
-        DriverA<Car> driverA = new DriverA<>("Ivan", "Ivanovich", "Ivanov", 4);
-        System.out.println(driverA.getMessage(fistCar));
-        DriverB<Bus> driverB = new DriverB<>("Ivan", "Ivanovich", "Ivanov", 4);
-        System.out.println(driverB.getMessage(firstBus));
-        DriverC<Truck> driverC = new DriverC<>("Ivan", "Ivanovich", "Ivanov", 5);
-        System.out.println(driverC.getMessage(firstTruck));
+        DriverA driverA = new DriverA("Ivan", "Ivanovich", "Ivanov", 5, fistCar);
+        System.out.println(driverA);
     }
 }

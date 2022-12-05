@@ -2,11 +2,10 @@ package core.hw4;
 
 import core.Utils;
 
-public abstract class Transport<T> {
+public abstract class Transport {
     private String brand;
     private String model;
     private float volume;
-
 
     public Transport(String brand, String model, float volume) {
         this.brand = Utils.validateString(brand, "Default");

@@ -32,8 +32,7 @@ public class Car extends Transport implements Competitors{
 
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + super.getBrand() + '\'' +
+        return "brand='" + super.getBrand() + '\'' +
                 ", model='" + super.getModel() + '\'' +
                 ", volume=" + super.getVolume();
     }
