@@ -1,8 +1,24 @@
 package core.hw4;
 
 public class Bus extends Transport implements Competitors {
-    public Bus(String brand, String model, float volume) {
+    private Capacity capacity;
+
+    public Bus(String brand, String model, float volume, Capacity capacity) {
         super(brand, model, volume);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public void printType() {
+
     }
 
     @Override
