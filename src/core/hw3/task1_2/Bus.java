@@ -1,6 +1,6 @@
 package core.hw3.task1_2;
 
-import core.hw3.Utils;
+import core.Utils;
 
 import java.util.Objects;
 
