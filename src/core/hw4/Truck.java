@@ -2,8 +2,24 @@ package core.hw4;
 
 public class Truck extends Transport implements Competitors {
 
-    public Truck(String brand, String model, float volume) {
+    private LoadType loadType;
+
+    public Truck(String brand, String model, float volume, LoadType loadType) {
         super(brand, model, volume);
+        this.loadType = loadType;
+    }
+
+    public LoadType getLoadType() {
+        return loadType;
+    }
+
+    public void setLoadType(LoadType loadType) {
+        this.loadType = loadType;
+    }
+
+    @Override
+    public void printType() {
+
     }
 
     @Override

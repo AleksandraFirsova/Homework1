@@ -1,8 +1,28 @@
 package core.hw4;
 
 public class Car extends Transport implements Competitors {
-    public Car(String brand, String model, float volume) {
+    private BodyType bodyType;
+
+    public Car(String brand, String model, float volume, BodyType bodyType) {
         super(brand, model, volume);
+        this.bodyType = bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(bodyType);
+        }
     }
 
     @Override

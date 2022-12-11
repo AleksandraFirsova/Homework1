@@ -13,6 +13,8 @@ public abstract class Transport {
         this.volume = Utils.validateFloatNum(volume, 0);
     }
 
+    public abstract void printType();
+
     public String getBrand() {
         return brand;
     }
