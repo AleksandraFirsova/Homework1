@@ -1,4 +1,4 @@
-package core.hw3;
+package core;
 
 public class Utils {
     public static String validateString(String value, String defaultValue) {
