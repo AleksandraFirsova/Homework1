@@ -22,6 +22,12 @@ public class Bus extends Transport implements Competitors {
     }
 
     @Override
+    public Boolean passDiagnostics() {
+        System.out.println("Автобус " + getBrand() + getModel() + " в диагностике не требуется");
+        return true;
+    }
+
+    @Override
     public void startMove() {
         System.out.println("Bus start");
     }

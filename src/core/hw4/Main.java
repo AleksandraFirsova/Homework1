@@ -18,8 +18,26 @@ public class Main {
         Truck thirdTruck = new Truck("Mercedes", "Benz", 60, LoadType.N1);
         Truck fourthTruck = new Truck("Volkswagen", "AG", 70, LoadType.N2);
 
+        service(firstCar, secondCar, thirdCar, fourthCar);
+
         DriverA driverA = new DriverA("Ivan", "Ivanovich", "Ivanov", 5, firstCar);
         System.out.println(driverA);
         firstCar.printType();
+    }
+
+    private static void serviceTransport(Transport transport) {
+        try {
+            if (!transport.passDiagnostics()) {
+                throw new RuntimeException("Автомобиль " + transport.getBrand() + transport.getModel() + " не прошел диагностику");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static void service(Transport... transports) {
+        for (Transport transport : transports) {
+            serviceTransport(transport);
+        }
     }
 }
