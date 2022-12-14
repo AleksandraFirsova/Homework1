@@ -18,7 +18,7 @@ public abstract class Driver<T extends Transport> {
         this.middleName = Utils.validateString(middleName, "default");
         this.lastName = Utils.validateString(lastName, "default");
         this.experience = Utils.validateIntNum(experience, 0);
-        Car = car;
+        setCar(car);
     }
 
     public String getFirstName() {
@@ -48,6 +48,9 @@ public abstract class Driver<T extends Transport> {
     }
 
     public void setCar(T car) {
+        if (car == null) {
+            throw new IllegalArgumentException("Необходимо указать категорию");
+        }
         Car = car;
     }
 

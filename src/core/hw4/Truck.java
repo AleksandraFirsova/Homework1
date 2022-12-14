@@ -23,6 +23,11 @@ public class Truck extends Transport implements Competitors {
     }
 
     @Override
+    public Boolean passDiagnostics() {
+        return Math.random() > 0.75;
+    }
+
+    @Override
     public void startMove() {
         System.out.println("Car start");
     }
