@@ -59,4 +59,14 @@ public class Bus extends Transport implements Competitors {
                 ", model='" + super.getModel() + '\'' +
                 ", volume=" + super.getVolume();
     }
+
+    @Override
+    public void repair() {
+
+    }
+
+    @Override
+    public Boolean service() {
+        return true;
+    }
 }

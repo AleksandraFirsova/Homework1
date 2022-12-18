@@ -1,9 +1,18 @@
 package core.hw4;
 
+import java.util.List;
+import java.util.Queue;
+
 public class Main {
     public static void main(String[] args) {
+        Mechanic<Car> mechanic = new Mechanic<Car>("Petr", "Philips");
+        Sponsor sponsor = new Sponsor("Vasya", 5);
 
         Car firstCar = new Car("Lada", "Grande", 20, BodyType.SEDAN);
+        firstCar.addDriver(new DriverA("Ivan", "Ivanovich", "Ivanov", 5, firstCar));
+        firstCar.addMechanic(mechanic);
+        firstCar.addSponsor(sponsor);
+
         Car secondCar = new Car("Toyota", "Prada", 50, BodyType.HATCHBACK);
         Car thirdCar = new Car("Mercedes", "Benz", 60, BodyType.COUPE);
         Car fourthCar = new Car("Volkswagen", "AG", 70, BodyType.CROSSOVER);
@@ -18,11 +27,20 @@ public class Main {
         Truck thirdTruck = new Truck("Mercedes", "Benz", 60, LoadType.N1);
         Truck fourthTruck = new Truck("Volkswagen", "AG", 70, LoadType.N2);
 
-        service(firstCar, secondCar, thirdCar, fourthCar);
+//        service(firstCar, secondCar, thirdCar, fourthCar);
+//
+//        DriverA driverA = new DriverA("Ivan", "Ivanovich", "Ivanov", 5, firstCar);
+//        System.out.println(driverA);
+//        firstCar.printType();
+//
+//        List<Transport> transports = List.of(firstCar, secondCar, thirdCar, fourthCar, firstBus, secondBus, firstTruck);
 
-        DriverA driverA = new DriverA("Ivan", "Ivanovich", "Ivanov", 5, firstCar);
-        System.out.println(driverA);
-        firstCar.printType();
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addCar(firstCar);
+        serviceStation.addTruck(firstTruck);
+
+        serviceStation.service();
+        serviceStation.service();
     }
 
     private static void serviceTransport(Transport transport) {

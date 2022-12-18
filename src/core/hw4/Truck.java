@@ -59,4 +59,14 @@ public class Truck extends Transport implements Competitors {
                 ", model='" + super.getModel() + '\'' +
                 ", volume=" + super.getVolume();
     }
+
+    @Override
+    public void repair() {
+        System.out.println("Машина починена");
+    }
+
+    @Override
+    public Boolean service() {
+        return Math.random() > 0.7;
+    }
 }
