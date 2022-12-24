@@ -2,10 +2,6 @@ package core.hw4;
 
 import core.Utils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringJoiner;
-
 public abstract class Driver<T extends Transport> {
     private String firstName;
     private String middleName;
@@ -19,6 +15,13 @@ public abstract class Driver<T extends Transport> {
         this.lastName = Utils.validateString(lastName, "default");
         this.experience = Utils.validateIntNum(experience, 0);
         setCar(car);
+    }
+
+    public Driver(String firstName, String middleName, String lastName, int experience) {
+        this.firstName = Utils.validateString(firstName, "default");
+        this.middleName = Utils.validateString(middleName, "default");
+        this.lastName = Utils.validateString(lastName, "default");
+        this.experience = Utils.validateIntNum(experience, 0);
     }
 
     public String getFirstName() {
@@ -68,14 +71,6 @@ public abstract class Driver<T extends Transport> {
 
     @Override
     public String toString() {
-        List<String> list = new ArrayList<>();
-        list.add(firstName);
-        list.add(middleName);
-        list.add(lastName);
-        StringJoiner joiner = new StringJoiner(", ");
-        for (String s : list)
-            joiner.add(s);
-        String result = joiner.toString();
-        return "Водитель " + result + " управляет автомобилем " + getCar() + " и будет участвовать в заезде";
+        return getFirstName() + " " + getMiddleName() + " " + getCar() + " " + getLastName() + " управляет автомобилем и будет участвовать в заезде";
     }
 }

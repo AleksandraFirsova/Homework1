@@ -4,7 +4,6 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class ServiceStation {
-
     private Queue<Transport> transportQueue = new ArrayDeque<>();
 
     private void addTransport(Transport transport) {

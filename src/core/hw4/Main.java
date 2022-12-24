@@ -1,46 +1,55 @@
 package core.hw4;
 
-import java.util.List;
-import java.util.Queue;
-
 public class Main {
     public static void main(String[] args) {
-        Mechanic<Car> mechanic = new Mechanic<Car>("Petr", "Philips");
-        Sponsor sponsor = new Sponsor("Vasya", 5);
+        Mechanic<Car> mechanicCar = new Mechanic<Car>("Петр", "Philips");
+        Mechanic<Bus> mechanicBus = new Mechanic<Bus>("Дмитрий", "Toyota");
+        Mechanic<Truck> mechanicTruck = new Mechanic<Truck>("Сергей", "Lada");
 
-        Car firstCar = new Car("Lada", "Grande", 20, BodyType.SEDAN);
-        firstCar.addDriver(new DriverA("Ivan", "Ivanovich", "Ivanov", 5, firstCar));
-        firstCar.addMechanic(mechanic);
-        firstCar.addSponsor(sponsor);
+        Sponsor sponsorPhilips = new Sponsor("Илья", 5);
+        Sponsor sponsorToyota = new Sponsor("Антон", 1);
+        Sponsor sponsorLada = new Sponsor("Федор", 3);
 
-        Car secondCar = new Car("Toyota", "Prada", 50, BodyType.HATCHBACK);
-        Car thirdCar = new Car("Mercedes", "Benz", 60, BodyType.COUPE);
-        Car fourthCar = new Car("Volkswagen", "AG", 70, BodyType.CROSSOVER);
 
-        Bus firstBus = new Bus("Lada", "Grande", 20, Capacity.LITTLE);
-        Bus secondBus = new Bus("Toyota", "Prada", 50, Capacity.BIG);
-        Bus thirdBus = new Bus("Mercedes", "Benz", 60, Capacity.MIDDLE);
-        Bus fourthBus = new Bus("Volkswagen", "AG", 70, Capacity.VERY_BIG);
+        Car car = new Car("Lada", "Grande", 20, BodyType.SEDAN, mechanicCar);
+        car.addSponsor(sponsorLada);
+//        car.addSponsor(sponsorPhilips);
+//        car.addSponsor(sponsorLada);
+//        car.addSponsor(sponsorLada);
+//        car.addSponsor(sponsorLada);
 
-        Truck firstTruck = new Truck("Lada", "Grande", 20, LoadType.N2);
-        Truck secondTruck = new Truck("Toyota", "Prada", 50, LoadType.N3);
-        Truck thirdTruck = new Truck("Mercedes", "Benz", 60, LoadType.N1);
-        Truck fourthTruck = new Truck("Volkswagen", "AG", 70, LoadType.N2);
-
-//        service(firstCar, secondCar, thirdCar, fourthCar);
+//        Bus bus = new Bus("Lada", "Grande", 20, Capacity.LITTLE, mechanicBus);
+//        bus.addSponsor(sponsorPhilips);
+//        Truck truck = new Truck("Lada", "Grande", 20, LoadType.N2, mechanicTruck);
+//        truck.addSponsor(sponsorToyota);
 //
-//        DriverA driverA = new DriverA("Ivan", "Ivanovich", "Ivanov", 5, firstCar);
-//        System.out.println(driverA);
-//        firstCar.printType();
+        sponsorLada.addTransport(car);
+        sponsorLada.addTransport(car);
+//        sponsorLada.addTransport(car);
 //
-//        List<Transport> transports = List.of(firstCar, secondCar, thirdCar, fourthCar, firstBus, secondBus, firstTruck);
-
-        ServiceStation serviceStation = new ServiceStation();
-        serviceStation.addCar(firstCar);
-        serviceStation.addTruck(firstTruck);
-
-        serviceStation.service();
-        serviceStation.service();
+//        sponsorLada.addTransport(bus);
+//
+//
+        DriverA driverA = new DriverA("Андрей", "Сергеевич", "Прохоров", 5, car);
+//        DriverB driverB = new DriverB("Максим", "Сергеевич", "Шолохов", 3, bus);
+//        DriverC driverC = new DriverC("Кирилл", "Иванович", "Цветков", 4, truck);
+//
+        System.out.println(driverA + "\n");
+//        System.out.println(driverB + "\n");
+//        System.out.println(driverC + "\n");
+//
+//        service(car, bus, truck);
+//
+//        car.printType();
+//
+//        List<Transport> transports = List.of(car, bus, truck);
+//
+//        ServiceStation serviceStation = new ServiceStation();
+//        serviceStation.addCar(car);
+//        serviceStation.addTruck(truck);
+//
+//        serviceStation.service();
+//        serviceStation.service();
     }
 
     private static void serviceTransport(Transport transport) {
