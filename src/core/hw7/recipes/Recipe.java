@@ -26,7 +26,7 @@ public class Recipe {
     }
 
     public void setAllCost(int allCost) {
-        this.allCost = UtilsProducts.validateInt(allCost);
+        this.allCost = UtilsProducts.validateInt(allCost, 1);
     }
 
     public String getNameRecipe() {
@@ -48,5 +48,14 @@ public class Recipe {
     @Override
     public int hashCode() {
         return Objects.hash(productSet);
+    }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "productSet=" + productSet +
+                ", allCost=" + allCost +
+                ", nameRecipe='" + nameRecipe + '\'' +
+                '}';
     }
 }
