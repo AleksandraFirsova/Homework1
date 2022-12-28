@@ -8,9 +8,9 @@ public class UtilsProducts {
         return value;
     }
 
-    public static int validateInt(int value) {
+    public static int validateInt(int value, int defaultValue) {
         if (value <= 0) {
-            throw new IllegalArgumentException("Цена или количество товаров не могут быть пустыми");
+            value = defaultValue;
         }
         return value;
     }
