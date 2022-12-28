@@ -27,7 +27,7 @@ public class Product {
     }
 
     public void setCost(int cost) {
-        this.cost = UtilsProducts.validateInt(cost);
+        this.cost = UtilsProducts.validateInt(cost, 1);
     }
 
     public int getAmount() {
@@ -35,7 +35,7 @@ public class Product {
     }
 
     public void setAmount(int amount) {
-        this.amount = UtilsProducts.validateInt(amount);
+        this.amount = UtilsProducts.validateInt(amount, 1);
     }
 
     @Override
@@ -49,5 +49,14 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", cost=" + cost +
+                ", amount=" + amount +
+                '}';
     }
 }

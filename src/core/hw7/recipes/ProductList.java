@@ -21,4 +21,11 @@ public class ProductList {
         }
         products.remove(product);
     }
+
+    @Override
+    public String toString() {
+        return "ProductList{" +
+                "products=" + products +
+                '}';
+    }
 }

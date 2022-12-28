@@ -1,22 +1,56 @@
 package core.hw7.recipes;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RecipesList {
-    private Set<Recipe> allRecipes = new HashSet<>();
+    private HashMap<Product, Integer> allRecipes = new HashMap<>();
 
-    public void addRecipes(Recipe recipe) {
-        if (allRecipes.contains(recipe)) {
-            throw new IllegalArgumentException("Такой рецепт уже есть");
+    public void checkAddedProductToRecipes(String name) {
+        boolean isBought = false;
+        for (Map.Entry<Product, Integer> product : allRecipes.entrySet()) {
+            if (product.getKey().getName().equals(name)) {
+                System.out.println(name + " куплен");
+                isBought = true;
+                break;
+            }
         }
-        allRecipes.add(recipe);
+        if (!isBought) {
+            System.out.println(name + " не куплен");
+        }
     }
 
-    public void removeProduct(Recipe recipe) {
-        if (!allRecipes.remove(recipe)) {
+    public void addProductToRecipe(Product product) {
+        if (product == null) {
+            return;
+        }
+        if (allRecipes.containsKey(product)) {
+            Integer productCount = allRecipes.get(product);
+            allRecipes.put(product, ++productCount);
+        } else {
+            allRecipes.put(product, 1);
+        }
+    }
+
+    public double getTotalCostAllProducts() {
+        double totalCostOfProduct = 0.0;
+        for (Map.Entry<Product, Integer> product : allRecipes.entrySet()) {
+            totalCostOfProduct += product.getKey().getCost() * product.getValue();
+        }
+        return totalCostOfProduct;
+    }
+
+    public void removeProduct(Product product, Integer amount) {
+        if (!allRecipes.remove(product, amount)) {
             throw new IllegalArgumentException("Такой рецепт уже есть");
         }
-        allRecipes.remove(recipe);
+        allRecipes.remove(product);
+    }
+
+    @Override
+    public String toString() {
+        return "RecipesList{" +
+                "allRecipes=" + allRecipes +
+                '}';
     }
 }
