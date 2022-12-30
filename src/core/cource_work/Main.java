@@ -77,18 +77,18 @@ public class Main {
     }
 
     private static PlannerTask inputTask(Scanner scanner) throws PlannerTaskInitializationException {
-        System.out.print("Введите название задачи: ");
+        System.out.println("Введите название задачи: ");
         String header = scanner.next();
-        System.out.print("Введите описание задачи: ");
+        System.out.println("Введите описание задачи: ");
         String description = scanner.next();
 
-        System.out.print("Введите тип задачи (WORK, PERSONAL): ");
+        System.out.println("Введите тип задачи (WORK, PERSONAL): ");
         String type = scanner.next();
 
-        System.out.print("Введите интервал задачи (ONCE, DAILY, WEEKLY, MONTHLY, YEARLY): ");
+        System.out.println("Введите интервал задачи (ONCE, DAILY, WEEKLY, MONTHLY, YEARLY): ");
         String interval = scanner.next();
 
-        System.out.print("Введите дату: ");
+        System.out.println("Введите дату: ");
         scanner.nextLine();
         String date = scanner.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); //yyyy-MM-dd HH:mm
