@@ -16,13 +16,7 @@ public class Main {
         } catch (PlannerTaskInitializationException e) {
             System.out.println(e.getMessage());
             return;
-        }/*
-
-        List<PlannerTask> tasks = dailyPlanner.getTasks(LocalDateTime.now().plusDays(0));
-
-        for (PlannerTask task : tasks) {
-            System.out.println(task.getId());
-        }*/
+        }
 
         try (Scanner scanner = new Scanner(System.in)) {
             label:
@@ -97,7 +91,7 @@ public class Main {
                 description,
                 RepeatInterval.valueOf(interval),
                 Type.valueOf(type)
-        ).setDate(LocalDateTime.parse(date, formatter));
+        ).setDate(LocalDate.parse(date, formatter).atStartOfDay());
 
     }
 

@@ -39,14 +39,6 @@ public class DailyPlanner {
                     resultList.add(plannerTask);
                     continue;
                 }
-
-                //If task created on last day of month
-                /*boolean lastDateOfMonthPlaner = plannerTask.getDate().getDayOfMonth() == plannerTask.getDate().with(lastDayOfMonth()).getDayOfMonth();
-                boolean lastDateOfMonthDate = dateTime.getDayOfMonth() == dateTime.with(lastDayOfMonth()).getDayOfMonth();
-
-                if (lastDateOfMonthPlaner && lastDateOfMonthDate) {
-                    resultList.add(plannerTask);
-                }*/
             }
             if (plannerTask.getInterval() == RepeatInterval.YEARLY &&
                     dateTime.getDayOfYear() == plannerTask.getDate().getDayOfYear()) {
